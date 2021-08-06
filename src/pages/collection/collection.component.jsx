@@ -5,8 +5,9 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 
 import "./collection.styles.scss";
 
-const CollectionPage = ({ collection }) => {
-  console.log("match=======", collection);
+const CollectionPage = ({ collection, match }) => {
+  console.log("collection=======", collection);
+  console.log("match=======", match);
   // const { title, items } = match;
   return (
     <div className="collection">
