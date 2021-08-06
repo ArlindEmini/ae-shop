@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { persistStore } from "redux-persist";
 
 import logger from "redux-logger";
@@ -7,7 +7,12 @@ import rootReducer from "./root-reducer";
 
 const middleware = [logger];
 
-export const store = createStore(rootReducer, applyMiddleware(...middleware));
+const composeEnhacer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export const store = createStore(
+  rootReducer,
+  composeEnhacer(applyMiddleware(...middleware))
+);
 
 export const persistor = persistStore(store);
 
