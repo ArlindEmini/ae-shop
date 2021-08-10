@@ -2,14 +2,6 @@ import memoize from "lodash.memoize";
 
 import { createSelector } from "reselect";
 
-const collectionId = {
-  hats: 0,
-  sneakers: 1,
-  jackets: 2,
-  womens: 3,
-  mens: 4,
-};
-
 const selectShop = (state) => state.shop;
 
 export const selectCollections = createSelector(
